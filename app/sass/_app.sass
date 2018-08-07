@@ -1,0 +1,475 @@
+.app
+	width: 1440px
+	min-height: 1024
+	display: flex
+	margin-top: 20px
+.home
+	display: flex
+	width: 460px
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	transition: all .3s ease
+	&__roof
+		width: 436px
+		height: 46px
+		box-sizing: border-box
+		background: url(../img/roof.png) no-repeat center
+	&__floor
+		width: 460px
+		height: 131px
+		display: flex
+		justify-content: center
+		align-items: center
+		background: url(../img/floor.png) no-repeat center
+		&_window
+			background: url(../img/window.png) no-repeat center
+			width: 97px
+			height: 87px
+			display: flex
+			margin: 0 18px
+			justify-content: center
+			align-items: flex-end
+			padding-bottom: 10px
+	&__footer
+		width: 415px
+		height: 70px
+		background: url(../img/footer.png) no-repeat center
+.functional
+	margin-left: 100px
+	&__title
+		font-family: 'Roboto Medium'
+		font-size: 56px
+		line-height: 66px
+		margin-top: 10px
+		margin-bottom: 27px
+.night
+	.home__roof
+		background: url(../img/night_roof.png) no-repeat center
+	.home__floor		
+		background: url(../img/night_floor.png) no-repeat center
+	.home__footer
+		background: url(../img/night_footer.png) no-repeat center
+.tabs
+	display: flex
+	list-style-type: none
+	position: relative
+	padding: 0
+	&__btn
+		text-decoration: none
+		padding: 18px 10px
+		background-color: #fff
+		border: 1px solid grey
+		border-radius: 100px
+		width: 220px
+		box-sizing: border-box
+		text-align: center
+		font-family: 'HelveticaNeueCyr'
+		transition: all .3s ease
+		cursor: pointer
+		&:last-child
+			position: absolute
+			left: 180px
+		&_active		
+			z-index: 1
+			color: #fff	
+			border: 1px solid #4288FA
+			background: linear-gradient(#48A8F6, #4288FA)
+.field 
+	height: 50px
+	border: 1px solid #E4EAEE
+	border-radius: 100px
+	padding-left: 25px
+	padding-right: 25px
+	appearance: none
+	background: transparent
+	.field:focus 
+		border-color: #47A4F7
+.tabs-content
+	margin-top: 40px
+	min-width: 646px
+	border-radius: 5px
+	box-shadow: 0px 0px 44px rgba(0,0,0, 0.1)
+	display: none
+	&__title
+		margin: 0
+		font-family: 'HelveticaNeueCyr'
+		font-size: 24px
+		font-weight: 400
+		line-height: 28px
+		padding: 25px 35px
+		border-bottom: 1px solid #EAECF0
+		position: relative
+		z-index: 1
+		&::after
+			content: ''
+			z-index: -1
+			position: absolute
+			display: block
+			width: 30px
+			height: 30px
+			background-color: #fff
+			transform: rotate(45deg)
+			top: -10px
+			left: 90px
+			
+	&__footer
+		padding: 25px 35px
+		border-top: 1px solid #EAECF0
+.tabs-content_active
+	display: block
+.form-settings
+	display: flex
+	align-items: center
+	padding: 21px 35px 0 35px
+	justify-content: space-between
+	&:last-child
+		padding-bottom: 21px
+	label
+		font-family: 'HelveticaNeueCyr'
+		font-weight: 550
+		font-size: 16px
+		color: #A1BBCD
+	input
+		padding: 16px 25px
+		font-family: 'HelveticaNeueCyr'
+		box-sizing: border-box
+		font-size: 16px
+		color: #333333
+		border-radius: 100px
+		border: 1px solid #E4EAEE
+		width: 426px
+		&:focus
+			border: 1px solid #47A4F7
+			outline: none
+		&__sex
+// .sex
+// 	display: flex
+// 	list-style-type: none
+// 	position: relative
+// 	padding: 0
+// 	&__choice
+// 		text-decoration: none
+// 		padding: 18px 10px
+// 		background-color: #fff
+// 		border: 1px solid grey
+// 		border-radius: 100px
+// 		width: 220px
+// 		box-sizing: border-box
+// 		text-align: center
+// 		font-family: 'HelveticaNeueCyr'
+// 		cursor: pointer
+// 		&:first-child
+// 			margin-right: 180px
+// 		&:last-child
+// 			position: absolute
+// 			left: 180px
+// 		&_active		
+// 			z-index: 1
+// 			color: #fff	
+// 			border: 1px solid #4288FA
+// 			background: linear-gradient(#48A8F6, #4288FA)
+.switch 
+  position: relative
+  display: inline-block
+  width: 222px
+  height: 54px
+.switch input 
+	display: none
+.slider 
+  position: absolute
+  cursor: pointer
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  -webkit-transition: .4s
+  transition: .4s
+
+.on, .off
+	color: black
+	position: absolute
+	transform: translate(-50%, -50%)
+	top: 50%
+	font-family: 'HelveticaNeueCyr'
+	padding: 18px 10px
+	width: 232px
+	box-sizing: border-box
+	text-align: center
+	font-family: 'HelveticaNeueCyr'
+	cursor: pointer
+.on	
+	position: absolute
+	right: 74px
+	background: linear-gradient(#48A8F6, #4288FA)	
+	border-radius: 100px
+	color: white
+	border: 1px solid grey	
+	border-right: none
+	z-index: 22
+.off
+	position: absolute
+	left: 110px
+	border: 1px solid grey	
+	border-left: none
+	width: 220px
+	border-radius: 100px
+
+input:checked + .slider > .on	
+	display: block
+	position: absolute
+	color: black	
+	padding: 18px 10px
+	border: 1px solid grey	
+	background: transparent	
+	z-index: 1
+input:checked + .slider .off
+	color: white
+	display: block
+	position: absolute
+	color: white	
+	padding: 18px 10px
+	border: 1px solid #4288FA
+	font-family: 'HelveticaNeueCyr'
+	padding: 18px 10px
+	border-radius: 100px	
+	background: linear-gradient(#48A8F6, #4288FA)	
+	z-index: 1
+/* Rounded sliders */
+.slider.round 
+	z-index: 1
+  border-radius: 34px
+.slider.round:before
+  border-radius: 50%
+.form
+	&__rooms
+		.field
+			width: 426px
+			box-sizing: border-box
+			position: relative
+			background: url(../img/select_arrow.png) no-repeat right
+			background-position-x: 380px
+	&__people
+		select
+			width: 426px
+			background: url(../img/select_arrow.png) no-repeat right
+			background-position-x: 380px
+.checkbox-block
+	display: flex
+	width: 426px
+	align-items: center
+	color: #000000
+	font-family: 'HelveticaNeueCyr'
+.checkbox
+	position: relative
+	opacity: 1
+	margin: 10px 0 0 20px
+.btn
+	font-family: 'HelveticaNeueCyr'
+	font-size: 18px
+	display: flex
+	justify-content: center
+	&__reset
+		width: 209px
+		height: 50px
+		background-color: #EBEAEA
+		border-radius: 100px
+		border: none
+		outline: none
+		cursor: pointer
+		box-sizing: border-box
+	&__add
+		width: 341px
+		height: 50px
+		background: linear-gradient(#48A8F6, #4288FA)
+		border-radius: 100px
+		border: none
+		outline: none
+		cursor: pointer
+		color: #fff
+		box-sizing: border-box
+		margin-left: 20px
+	&__filter
+		width: 341px
+		height: 50px
+		background: linear-gradient(#48A8F6, #4288FA)
+		border-radius: 100px
+		border: none
+		outline: none
+		cursor: pointer
+		color: #fff
+		box-sizing: border-box
+.modal
+	position: fixed
+	top: -50%
+	transform: translateY(-50%)
+	right: 15%
+	z-index: 5
+	width: 640px
+	min-height: 415px
+	font-family: 'HelveticaNeueCyr'
+	font-size: 24px		
+	background-color: #ffffff	
+	box-shadow: 0px 0px 44px rgba(0,0,0, 0.1)
+	display: flex
+	flex-direction: column
+	transition: all .3s ease
+	&__title
+		padding: 0px 35px
+		display: flex
+		justify-content: space-between
+		align-items: center
+		border-bottom: 1px solid #EAECF0		
+		img
+			width: 28px
+			height: 33px
+	&__close
+			display: block
+			width: 19px
+			height: 19px
+			background: url(../img/close.png)
+	&__content
+		padding: 30px 35px
+	p		
+		color: #A1BBCD
+		font-size: 16px
+		margin: 0
+		font-weight: 550	
+	&__content 
+.modal_active
+	top: 50%
+.modal-header
+	&__name
+		display: flex
+		justify-content: center
+		align-items: center
+		h3
+			margin-right: 22px
+.information
+	display: flex
+	flex-wrap: wrap
+	padding: 0
+	&__item
+		display: flex
+		flex-direction: column
+		min-width: 200px
+		h4
+			margin: 10px 0 30px 0
+			font-size: 24px
+			font-weight: 400
+		&:last-child
+			h4
+				margin-bottom: 10px
+
+// Switch day/night
+.switch_day 
+	margin-top: 20px
+	position: relative
+	display: inline-block
+	width: 90px
+	height: 34px
+.switch_day .input_day
+	display: none
+.slider_day 
+	position: absolute
+	cursor: pointer
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background: #393A57 url(../img/night.png) no-repeat center
+	background-size: contain
+	background-position: 40px
+	-webkit-transition: .4s
+	transition: .4s
+.slider_day:before 
+	position: absolute
+	content: ""
+	height: 26px
+	width: 26px
+	left: 4px
+	bottom: 4px
+	background-color: white
+	-webkit-transition: .4s
+	transition: .4s
+.input_day:checked + .slider_day
+	background: #ABCADD url(../img/day.png) no-repeat center
+	background-size: contain
+	background-position: 10px
+.input_day:focus + .slider_day 
+	box-shadow: 0 0 1px #2196F3
+.input_day:checked + .slider_day:before 
+	-webkit-transform: translateX(55px)
+	-ms-transform: translateX(55px)
+	transform: translateX(55px)
+/*------ ADDED CSS ---------*/
+
+/*--------- END --------*/
+
+/* Rounded slider_days */
+.slider_day.round 
+	border-radius: 34px
+.slider_day.round:before 
+	border-radius: 50%
+
+
+.checkbox__extra
+	position: relative	
+	display: none
+.checkbox__extra + label
+	&::before
+		content: ''
+		display: block
+		position: absolute
+		width: 25px
+		height: 25px
+		border: 1px solid #E4EAEE
+		border-radius: 50%
+		top: -5px
+		left: -35px
+	&::after
+		content: ''
+		display: none
+		position: absolute
+		width: 21px
+		height: 21px
+		border-radius: 50%
+		top: -2px
+		left: -32px
+		background: linear-gradient(#48A8F6, #4288FA)
+.checkbox__extra:checked + label
+	color: black
+	&::before
+		border: 1px solid #48A8F6
+	&::after
+		display: block
+	
+.checkbox-block
+	label
+		position: relative
+		margin-left: 55px
+		font-weight: 400
+		font-size: 16px
+		color: darken(#F5F5F5, 10%)
+		white-space: nowrap
+
+.span__input
+	display: none
+	color: red
+	position: relative
+	top: 5px
+	left: 125px
+	font-size: 16px
+	&-error
+		display: block
+.input__error
+	border: 1px solid red !important
+
+#nameError
+	left: 140px
+#floorError
+	left: 170px
+#roomsError
+	left: 320px
+#peopleError
+	left: 320px

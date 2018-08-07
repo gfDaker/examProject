@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8">
+	<title>ЖК от Винта</title>
+	<meta name="description" content="">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">	
+	<meta name="theme-color" content="#000">
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<div class="app">
+			<div class="app__home">
+				<div class="home" id="home">
+					<div class="home__roof">
+					</div>
+					<div class="home__floor home__floor1">
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+					</div>
+					<div class="home__floor home__floor2">
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+					</div>
+					<div class="home__floor home__floor3">
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+					</div>
+					<div class="home__floor home__floor4">
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+					</div>
+					<div class="home__floor home__floor5">
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+						<div class="home__floor_window">
+						</div>
+					</div>
+					<div class="home__footer">
+					</div>	
+					<label class="switch_day">
+						<input class="input_day" checked type="checkbox" id="togSwitcher">
+						<div class="slider_day round"></div>
+					</label>
+				</div>
+			</div>
+			<div class="app__functional functional">
+					<h2 class="functional__title">
+						ЖК от Винта
+					</h2>
+					<div class="functional__settings">
+						<ul class="tabs">
+							<li class="tabs__btn tabs__btn_active">Добавить жителя</li>
+							<li class="tabs__btn">Фильтр</li>
+						</ul>
+						<form id="form_add" onsubmit="return false;" class="tabs-content tabs-content_active">							
+							<h3 class="tabs-content__title">Добавить Жителя</h3>							
+							<div class="tabs-content__form form">
+								<div class="form-settings form__name">
+									<label for="name">Имя</label>
+									<input id="name" type="text" required minlength="2" maxlength="15" pattern="/^[A-Za-z]+$/">
+								</div>
+								<span id="nameError" class="span__input">Поле должно содержать буквы и должно быть не больше 15 символов</span>
+								<div class="form-settings form__sex">
+									<label>Пол</label>
+									<label class="switch">
+										<input type="checkbox" id="sexCheck">
+										<div class="slider round"><!--ADDED HTML -->
+											<span class="on">Мужской</span><span class="off">Женский</span>
+										</div>
+									</label>
+								</div>
+								<div class="form-settings form__floor">									
+									<label>Этаж</label>
+									<input id="floor" type="text" required maxlength="1" pattern="[1-5]">
+								</div>
+								<span id="floorError" class="span__input">Поле должно содержать цифры и должно быть не больше 5</span>
+								<div class="form-settings form__rooms">
+									<label>Кол-во комнат</label>
+									<select class="field" name="rooms" id="roomsCount">
+										<option>Выбрать</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+									</select>
+								</div>
+								<span id="roomsError" class="span__input">Обязательное поле</span>
+								<div class="form-settings form__extra">
+									<label>Дополнительно</label>
+									<div class="checkbox-block new-man">
+											<input class="checkbox checkbox__extra" id="animals" value="Домашние животные" type="checkbox">	
+											<label for="animals">Домашние животные</label>
+											<input class="checkbox checkbox__extra" id="tv" value="ТВ" type="checkbox">	
+											<label for="tv">ТВ</label>
+											<input class="checkbox checkbox__extra" value='Интернет' id="internet" type="checkbox">	
+											<label for="internet">Интернет</label>
+									</div>
+								</div>
+								<div class="form-settings form__people">
+										<label>Сколько человек <br> проживает</label>
+										<select class="field" name="mans" id="mansCount">
+											<option>Выбрать</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+								</div>
+								<span id="peopleError" class="span__input">Обязательное поле</span>
+							</div>
+							<div class="tabs-content__footer btn">
+								<button class="btn__reset" type="reset" id="reset">
+									Сбросить
+								</button>
+								<button form="form_add" class="btn__add" id="addMan">
+									Добавить
+								</button>
+							</div>
+						</form>
+						<form class="tabs-content" onsubmit="return false;">
+							<h3 class="tabs-content__title">Фильтр</h3>
+							<div class="tabs-content__form form">
+									<div class="form-settings form__sex">
+										<label>Пол</label>
+										<label class="switch" id='labelSex'>
+												<input type="checkbox"  id="sexFilter">
+												<div class="slider round"><!--ADDED HTML -->
+													<span class="on">Мужской</span><span class="off">Женский</span>
+												</div>
+										</label>
+										<!-- <ul class="sex sex-filter" id='sexFilter'>
+											<li class="sex__choice sex__choice_active" data-sex="male">Мужской</li>
+											<li class="sex__choice" data-sex="female">Женский</li>
+										</ul> -->
+									</div>
+									<div class="form-settings form__rooms">
+										<label>Кол-во комнат</label>
+										<select class="field" name="rooms" id="roomsCountFilter">
+											<option>Выбрать</option>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+									</div>
+									<div class="form-settings form__extra">
+										<label>Дополнительно</label>
+										<div class="checkbox-block filter">
+												<input class="checkbox checkbox__extra" id="animalsFilt" value='Домашние животные' type="checkbox">	
+												<label for="animalsFilt">Домашние животные</label>
+												<input class="checkbox checkbox__extra" id="tvFilt" value='ТВ' type="checkbox">	
+												<label for="tvFilt">ТВ</label>
+												<input class="checkbox checkbox__extra" id="internetFilt" value='Интернет' type="checkbox">	
+												<label for="internetFilt">Интернет</label>
+										</div>
+									</div>
+									<div class="form-settings form__floor">									
+										<label>Этаж</label>
+										<input id="floorFilter" type="text">
+									</div>
+								</div>
+								<div class="tabs-content__footer btn">
+									<button class="btn__filter" id='resetFilter'>
+										Сброс фильтра
+									</button>
+								</div>
+							</form>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!-- Modals -->
+	<div class="modal" id="modal">
+		<div class="modal__title modal-header">
+			<div class="modal-header__name">
+				<h3 id="modalName"></h3>
+				<img id='imgSex' src="img/male.png">
+			</div>
+			<a href="#" class="modal__close">
+			</a>
+		</div>
+		<div class="modal__content ">
+			<div class="modal__content information">
+				<div class="information__item">
+					<p>Пол</p>
+					<h4 id="modalSex"></h4>
+				</div>
+				<div class="information__item">
+					<p>Этаж</p>
+					<h4 id="modalFloor"></h4>
+				</div>
+				<div class="information__item">
+					<p>Кол-во комнат</p>
+					<h4 id="modalRooms"></h4>
+				</div>
+				<div class="information__item">
+					<p>Дополнительно</p>
+					<h4 id="modalExtra"></h4>
+				</div>
+				<div class="information__item">
+					<p>Сколько человек <br> проживает</p>
+					<h4 id="modalPeople"></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/scripts.min.js"></script>
+
+</body>
+</html>
